@@ -19,7 +19,7 @@ productRouter.get("/:id?", async (req, res) => {
   if (id) {
     const produto = await buscarUmProduto(id);
     if (!produto) {
-      res.status(200).send();
+      res.status(404).json("Produto não encontrado");
       return;
     }
 
